@@ -1,0 +1,13 @@
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--color-danger:#f5222d;
+$--background-color-base:#f0f2f5;
+
+// ==
+// 具体可定义变量请参照
+@import "~element-ui/packages/theme-chalk/src/common/var";
+// @import "~element-ui/packages/theme-chalk/src/mixins/mixins";
+// @import "~element-ui/packages/theme-chalk/src/mixins/utils";
+// =
+
+// 间距空隙
+$spacer:5px;
