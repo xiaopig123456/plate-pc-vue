@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: "LinkButton",
+    name: "PpvLinkButton",
     // 配置同element ui的button组件
     props:{
       to:[String,Object],

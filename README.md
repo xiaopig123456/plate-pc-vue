@@ -11,6 +11,7 @@ npm run build （生产）
 ## UI框架
 - 使用[element-ui](https://element.eleme.cn/#/zh-CN/component/installation)作为基础ui框架。
 - 其他还引入了 `axios、nprogress、momentjs`等插件。
+--html、css书写规范请遵循 https://codeguide.bootcss.com/
 
 ## 目录结构
 ```
@@ -47,6 +48,7 @@ dookay-pro
 
 ### 组件
 - `src/components/global` 存放全局组件（系统自动引入）。
+- 组件以`Ppv`作为前缀.
 
 ### 请求api
 `src/requests`目录用于存放api接口（系统自动引入），其挂载为vue的一个属性，使用`this.$request`来访问。 例如：
@@ -71,6 +73,7 @@ dookay-pro
 - `variables.scss`为全局变量，将会被注册到全局任意地方的scss中，**不可删除**。
 - `index.scss`为样式入口，**不可删除**。
 - `_common.scss`存放公共样式，`_tools.scss`存放工具类。
+- 样式以`.ppv-`作为前缀.
 
 ### 工具
 `src/utils`目录用于存放自己写的一些工具函数（系统自动引入），其挂载为vue的一个属性，使用`this.$util`来访问。
