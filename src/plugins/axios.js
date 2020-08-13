@@ -1,3 +1,5 @@
+// 使用文档 https://github.com/imcvampire/vue-axios#readme
+
 import Vue from 'vue'
 import VueAxios from "vue-axios"
 import axios from "axios"

@@ -1,5 +1,6 @@
+//使用文档 https://github.com/ElemeFE/element/blob/master/components.json
+
 import Vue from 'vue'
-//以为准 https://github.com/ElemeFE/element/blob/master/components.json
 import {
   Pagination,
   Dialog,
@@ -152,7 +153,6 @@ Vue.use(Divider);
 Vue.use(Image);
 Vue.use(Calendar);
 Vue.use(Backtop);
-//Vue.use(PageHeader);
 Vue.use(CascaderPanel);
 Vue.use(Avatar);
 Vue.use(Scrollbar);
