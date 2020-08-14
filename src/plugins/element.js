@@ -1,6 +1,10 @@
 //使用文档 https://github.com/ElemeFE/element/blob/master/components.json
 
 import Vue from 'vue'
+import ElementUI from 'element-ui';
+Vue.use(ElementUI);
+
+/* 按需引入存在样式覆盖问题
 import {
   Pagination,
   Dialog,
@@ -165,4 +169,4 @@ Vue.prototype.$alert = MessageBox.alert;
 Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$notify = Notification;
-Vue.prototype.$message = Message;
+Vue.prototype.$message = Message;*/

@@ -116,6 +116,9 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+button{
+  font-family: $--font-family;
+}
 
 table {
   border-collapse: collapse; // Prevent double borders

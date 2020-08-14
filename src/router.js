@@ -6,9 +6,9 @@ Vue.use(Router)
 
 const routers = [];
 require.context('./routers', true, /.js$/).keys().forEach(function (n) {
-  const _import = require(`./routers/`+n.replace(/\.\/|\.js/g,''));
-
-  _import.default.forEach(function (r) {
+  const _n = n.replace(/\.\/|\.js/g,'');
+  if(_n.indexOf('_') === 0) return;
+  require(`./routers/`+ _n).default.forEach(function (r) {
     routers.push(r)
   });
 });

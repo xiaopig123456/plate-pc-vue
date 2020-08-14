@@ -12,7 +12,9 @@ Vue.use({
   install(Vue){
     let res = {};
     require.context('./utils', true, /.js$/).keys().forEach(function (n) {
-      const _import = require(`./utils/`+n.replace(/\.\/|\.js/g,''));
+      const _n = n.replace(/\.\/|\.js/g,'');
+      if(_n.indexOf('_') === 0) return;
+      const _import = require(`./utils/`+ _n);
 
       for (let o in _import){
         if(o === 'default'){
@@ -30,16 +32,19 @@ Vue.use({
 
 // 自动引入插件
 require.context('./plugins', true, /.js$/).keys().forEach(function (n) {
-  require(`./plugins/`+n.replace(/\.\/|\.js/g,''))
+  const _n = n.replace(/\.\/|\.js/g,'');
+  if(_n.indexOf('_') === 0) return;
+  require(`./plugins/`+ _n)
 });
 
 // 自动引入并挂载api请求request
 Vue.use({
   install(Vue){
-
     let res = {};
     require.context('./requests', true, /.js$/).keys().forEach(function (n) {
-      const _import = require(`./requests/`+n.replace(/\.\/|\.js/g,''));
+      const _n = n.replace(/\.\/|\.js/g,'');
+      if(_n.indexOf('_') === 0) return;
+      const _import = require(`./requests/`+ _n);
       for (let o in _import){
         if(o === 'default'){
           for (let i in _import[o]){
@@ -59,16 +64,12 @@ Vue.use({
 const requireComponents = require.context('./components/global', true, /.vue$/);
 Vue.use({
   install:function (Vue){
-
     requireComponents.keys().forEach(function (n) {
       const _n = n.replace(/\.\/|\.vue/g,'')
-
-      if(_n.indexOf('_') === 0) return;
-
+      //if(_n.indexOf('_') === 0) return;
       let name = _n.split('/')
       name = name[name.length-1]
       name = name.replace(name[0],name[0].toUpperCase())
-
       Vue.component(name,requireComponents(n).default)
     });
   }
